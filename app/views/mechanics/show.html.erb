@@ -5,7 +5,12 @@
 <h3>List of Rides Working On:</h3>
 <ul>
   <% @mechanic.rides.each do |ride| %>
-  <li><%= ride.name %></li>
+  <li>
+    <% if ride.open? %>
+      <%= ride.name %>
+    <% end %>
+  </li>
+  <%= button_to "Add a Ride", "/mechanics/#{@mechanic.id}/edit", method: :get %>
   <% end %>
 </ul>
 </section>
