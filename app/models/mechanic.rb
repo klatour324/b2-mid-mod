@@ -5,4 +5,8 @@ class Mechanic < ApplicationRecord
   def self.average_years_of_experience
     select(:years_experience).average(:years_experience)
   end
+
+  def order_rides_descending
+    rides.order(:thrill_rating)
+  end
 end
