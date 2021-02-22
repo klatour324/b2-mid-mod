@@ -1,0 +1,6 @@
+<%= form_with url: "/mechanics/#{@mechanic.id}", method: :patch do |f| %>
+  <%= f.label :ride_id %>
+  <%= f.text_field :ride_id %>
+
+  <%= f.submit "Add Ride to Workload" %>
+<% end %>
